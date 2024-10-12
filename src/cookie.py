@@ -7,7 +7,7 @@ class cookie:
         self.generate_token()
 
     def generate_token(self):
-        self._x_token = requests.post("https://economy.roblox.com/", proxies={"http": self.proxy.current}).headers.get("x-csrf-token")
+        self._x_token = requests.post("https://auth.roblox.com/v2/logout", proxies={"http": self.proxy.current}).headers.get("x-csrf-token")
 
     def x_token(self):
         return self._x_token
